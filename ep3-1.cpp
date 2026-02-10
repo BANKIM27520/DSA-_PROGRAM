@@ -22,38 +22,40 @@ Comparisons = 3*/
 #include<stdio.h>
 int main()
 {
-    int n,key,mid,l,h;
-    printf("Enter the number of elements in the array: ");
+    int n,key;
+    printf("Enter the size of the array: ");
     scanf("%d",&n);
     int arr[n];
-    printf("Enter the elements of the array IN ASCENDING ORDER:");
+    printf("Enter %d space-separated integers: ",n);
     for(int i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    printf("ENTER THE ELEMENT TO BE SEARCHED:");
+    printf("Enter the key to search: ");
     scanf("%d",&key);
-    mid=n/2;
-    l=0;
-    h=n-1;
-    while(l<=h)
+    int c=0;
+    int f=0;
+    for(int i=0;i<n;i++)
     {
-        if(arr[mid]==key)
+        c++;
+        if(arr[i]==key)
         {
-            printf("Element found at position %d",mid);
-            printf("COMPARISON=%d",mid+1);
-            return 0;
-        }
-        else if(arr[mid]<key)
-        {
-            l=mid+1;
+            f=1;
+            break;
         }
         else
         {
-            h=mid-1;
+            continue;
         }
-        mid=(l+h)/2;
     }
-    printf("Element not found in the array.");
-    return 0;
-}
+    if(f==1)
+    {
+        printf("Found at index %d\n",c-1);
+        printf("Comparisons = %d\n",c);
+    }
+    else
+    {
+        printf("Not Found\n");
+    }
+    return 0;       
+}    
