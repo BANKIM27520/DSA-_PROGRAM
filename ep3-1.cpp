@@ -50,8 +50,8 @@ int main()
     }
     if(f==1)
     {
-        printf("Found at index %d\n",c-1);
-        printf("Comparisons = %d\n",c);
+        printf("Found at index=%d\n",c-1);
+        printf("Comparisons=%d\n",c);
     }
     else
     {
