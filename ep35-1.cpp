@@ -8,25 +8,17 @@ Output:
 - Print queue elements from front to rear, space-separated*/
 #include <stdio.h>
 #include <stdlib.h>
-
-// Node structure
 struct Node {
     int data;
     struct Node* next;
 };
-
-// Queue structure
 struct Queue {
     struct Node* front;
     struct Node* rear;
 };
-
-// Function to initialize queue
 void initQueue(struct Queue* q) {
     q->front = q->rear = NULL;
 }
-
-// Enqueue operation
 void enqueue(struct Queue* q, int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -39,8 +31,6 @@ void enqueue(struct Queue* q, int value) {
     q->rear->next = newNode;
     q->rear = newNode;
 }
-
-// Function to print queue
 void printQueue(struct Queue* q) {
     struct Node* temp = q->front;
     while (temp != NULL) {
@@ -49,19 +39,18 @@ void printQueue(struct Queue* q) {
     }
 }
 
-int main() {
+int main() 
+{
     int n;
     scanf("%d", &n);
-
     struct Queue q;
     initQueue(&q);
-
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         int x;
         scanf("%d", &x);
         enqueue(&q, x);
     }
-
     printQueue(&q);
     return 0;
 }
