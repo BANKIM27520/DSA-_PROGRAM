@@ -27,8 +27,15 @@ int main()
     for(i = 0; i < len; i++) {
         rev[i] = str[len - i - 1];
     }
-    rev[i] = '\0'; // Null-terminate the reversed string
-    // Check if the original string and reversed string are the same
-    printf("%s\n",str ? "YES" : "NO");
+    rev[i] = '\0'; 
+    int result=strcmp(str,rev);
+    if(result==0)
+    {
+        printf("YES");
+    }
+    else
+    {
+        printf("NO\n");
+    }
     return 0;
 }   
